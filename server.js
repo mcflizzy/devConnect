@@ -1,4 +1,4 @@
-import express          from 'express';
+import   express        from 'express';
 import { connectDB }    from './config/db.js';  // import db connection function
 
 // import routes
