@@ -1,5 +1,9 @@
 import   express                   from 'express';
 import { check, validationResult } from 'express-validator';
+import { User  } from '../../config/models/user.js'
+
+//routes\api\users.js
+//config\models\user.js
 
 // initialize router
 const router = express.Router();
@@ -7,6 +11,7 @@ const router = express.Router();
 // @router  POST api/users 
 // @desc    Register user
 // @access  Public
+
 export const usersRoute = 
     router.post(
         '/',
@@ -22,6 +27,13 @@ export const usersRoute =
                             return res.status(400).json({errors: errors.array()});
                         }
 
-                        console.log(req.body);
+                        const { name, email } = req.body;  // destructured req.body 
+                        
+                        // check for user
+                        // get user gravatar
+                        // encrypt password
+                        // return jsonwebtoken
+
+                        console.log(typeof(req.body));
                         res.send('--- User route ---')
                     });
